@@ -19,13 +19,11 @@ class TestFunction(unittest.TestCase):
 
 
 def rotate_left(triple):
-    result = triple[1:] + (triple[0],)
-    return result
+    return triple[1:] + (triple[0],)
 
 
 def rotate_right(triple):
-    result = (triple[-1],) + triple[:-1]
-    return result
+    return (triple[-1],) + triple[:-1]
 
 
 if __name__ == '__main__':
