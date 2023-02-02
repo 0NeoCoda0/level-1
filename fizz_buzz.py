@@ -17,12 +17,15 @@ class TestFunction(unittest.TestCase):
         self.assertEqual(fizz_buzz(1, 5), '1 2 Fizz 4 Buzz')
         self.assertEqual(fizz_buzz(11, 20),
                          '11 Fizz 13 14 FizzBuzz 16 17 Fizz 19 Buzz')
+        self.assertEqual(fizz_buzz(1, 15), '1 2 Fizz 4 Buzz Fizz 7 8 Fizz Buzz 11 Fizz 13 14 FizzBuzz')
+        self.assertEqual(fizz_buzz(20, 25), 'Buzz Fizz 22 23 Fizz Buzz')
+        self.assertEqual(fizz_buzz(30, 35), 'FizzBuzz 31 32 Fizz 34 Buzz')
 
 
 def fizz_buzz(begin, end):
-    i = begin
     result = []
-    while i <= end:
+
+    for i in range(begin, end + 1):
         if i % 5 == 0 and i % 3 == 0:
             result.append('FizzBuzz')
         elif i % 3 == 0:
@@ -31,9 +34,6 @@ def fizz_buzz(begin, end):
             result.append('Buzz')
         else:
             result.append(str(i))
-        i += 1
-
-    return ' '.join(result)
 
 
 if __name__ == '__main__':
